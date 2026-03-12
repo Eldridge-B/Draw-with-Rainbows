@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Draw With Rainbows</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="rainbow-strip"></div>
+  </header>
+
+  <main>
+    <canvas id="canvas" role="img" aria-label="Drawing canvas"></canvas>
+  </main>
+
+  <nav class="toolbar" role="toolbar" aria-label="Drawing tools">
+    <div class="tool-group tools">
+      <button class="tool-btn active" data-tool="brush" aria-label="Brush" aria-pressed="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="18" r="4"/><rect x="10" y="4" width="4" height="12" rx="2"/></svg>
+      </button>
+      <button class="tool-btn" data-tool="eraser" aria-label="Eraser" aria-pressed="false">
+        <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><line x1="4" y1="14" x2="20" y2="14" stroke-width="1.5"/></svg>
+      </button>
+      <button class="tool-btn" data-tool="fill" aria-label="Fill bucket" aria-pressed="false">
+        <svg viewBox="0 0 24 24"><path d="M6 20l6-16 6 16z"/><rect x="4" y="18" width="16" height="3" rx="1"/></svg>
+      </button>
+      <button class="tool-btn" data-action="undo" aria-label="Undo">
+        <svg viewBox="0 0 24 24"><path d="M7 10l-5 5 5 5" fill="none" stroke-width="2.5"/><path d="M2 15h14a5 5 0 000-10h-3" fill="none" stroke-width="2.5"/></svg>
+      </button>
+      <button class="tool-btn" data-action="clear" aria-label="Clear canvas">
+        <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20" stroke-width="2.5"/><line x1="20" y1="4" x2="4" y2="20" stroke-width="2.5"/></svg>
+      </button>
+    </div>
+
+    <div class="tool-group colors" aria-label="Color palette">
+      <button class="color-btn active" data-color="#000000" aria-label="Black" aria-selected="true" style="background:#000000"></button>
+      <button class="color-btn" data-color="#e02020" aria-label="Red" aria-selected="false" style="background:#e02020"></button>
+      <button class="color-btn" data-color="#ff8c00" aria-label="Orange" aria-selected="false" style="background:#ff8c00"></button>
+      <button class="color-btn" data-color="#ffd700" aria-label="Yellow" aria-selected="false" style="background:#ffd700"></button>
+      <button class="color-btn" data-color="#22c55e" aria-label="Green" aria-selected="false" style="background:#22c55e"></button>
+      <button class="color-btn" data-color="#3b82f6" aria-label="Blue" aria-selected="false" style="background:#3b82f6"></button>
+      <button class="color-btn" data-color="#6366f1" aria-label="Indigo" aria-selected="false" style="background:#6366f1"></button>
+      <button class="color-btn" data-color="#a855f7" aria-label="Purple" aria-selected="false" style="background:#a855f7"></button>
+      <button class="color-btn" data-color="#ec4899" aria-label="Pink" aria-selected="false" style="background:#ec4899"></button>
+      <button class="color-btn" data-color="#78350f" aria-label="Brown" aria-selected="false" style="background:#78350f"></button>
+      <button class="color-btn" data-color="#ffffff" aria-label="White" aria-selected="false" style="background:#ffffff"></button>
+      <button class="color-btn" data-color="#86efac" aria-label="Lime" aria-selected="false" style="background:#86efac"></button>
+      <button class="color-btn rainbow-btn" data-color="rainbow" aria-label="Rainbow" aria-selected="false"></button>
+    </div>
+
+    <div class="tool-group sizes" aria-label="Brush size">
+      <button class="size-btn" data-size="4" aria-label="Small brush" aria-selected="false"><span class="size-dot size-s"></span></button>
+      <button class="size-btn active" data-size="12" aria-label="Medium brush" aria-selected="true"><span class="size-dot size-m"></span></button>
+      <button class="size-btn" data-size="28" aria-label="Large brush" aria-selected="false"><span class="size-dot size-l"></span></button>
+    </div>
+
+    <div class="tool-group shapes" aria-label="Brush shape">
+      <button class="shape-btn active" data-shape="round" aria-label="Round brush" aria-selected="true">&#9679;</button>
+      <button class="shape-btn" data-shape="star" aria-label="Star brush" aria-selected="false">&#9733;</button>
+      <button class="shape-btn" data-shape="heart" aria-label="Heart brush" aria-selected="false">&#9829;</button>
+      <button class="shape-btn" data-shape="flower" aria-label="Flower brush" aria-selected="false">&#10047;</button>
+    </div>
+  </nav>
+
+  <div id="clear-confirm" class="clear-overlay" hidden>
+    <p>Erase everything?</p>
+    <button id="clear-yes" class="confirm-btn yes">Yes</button>
+    <button id="clear-no" class="confirm-btn no">No</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
