@@ -3,6 +3,8 @@
   --toolbar-bg: #f8fafc;
   --toolbar-border: #e2e8f0;
   --active-ring: #3b82f6;
+  --group-bg: #eef2f7;
+  --group-border: #d0d7e0;
   --btn-size: 44px;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -44,7 +46,7 @@ canvas {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
   padding: 6px 8px;
   padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
   background: var(--toolbar-bg);
@@ -56,9 +58,14 @@ canvas {
   display: flex;
   align-items: center;
   gap: 4px;
+  background: var(--group-bg);
+  border: 1px solid var(--group-border);
+  border-radius: 12px;
+  padding: 4px 6px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 1px 2px rgba(0,0,0,0.08);
 }
 
-.tool-btn {
+.tool-btn, .size-btn, .shape-btn {
   width: var(--btn-size);
   height: var(--btn-size);
   border: 2px solid transparent;
@@ -78,9 +85,10 @@ canvas {
   stroke: #334155;
 }
 
-.tool-btn.active {
+.tool-btn.active, .size-btn.active, .shape-btn.active {
   border-color: var(--active-ring);
-  background: #eff6ff;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .color-btn {
@@ -98,30 +106,9 @@ canvas {
   transform: scale(1.15);
 }
 
-.color-btn[data-color="#ffffff"] {
-  border-color: #94a3b8;
-}
+.color-btn[data-color="#ffffff"] { border-color: #94a3b8; }
 
-.rainbow-btn {
-  background: var(--rainbow) !important;
-}
-
-.size-btn {
-  width: var(--btn-size);
-  height: var(--btn-size);
-  border: 2px solid transparent;
-  border-radius: 10px;
-  background: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.size-btn.active {
-  border-color: var(--active-ring);
-  background: #eff6ff;
-}
+.rainbow-btn { background: var(--rainbow) !important; }
 
 .size-dot {
   display: block;
@@ -134,23 +121,9 @@ canvas {
 .size-l { width: 24px; height: 24px; }
 
 .shape-btn {
-  width: var(--btn-size);
-  height: var(--btn-size);
-  border: 2px solid transparent;
-  border-radius: 10px;
-  background: none;
-  cursor: pointer;
   font-size: 22px;
   line-height: 1;
   color: #334155;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.shape-btn.active {
-  border-color: var(--active-ring);
-  background: #eff6ff;
 }
 
 .clear-overlay {

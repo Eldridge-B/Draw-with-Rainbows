@@ -17,19 +17,19 @@
 
   <nav class="toolbar" role="toolbar" aria-label="Drawing tools">
     <div class="tool-group tools">
-      <button class="tool-btn active" data-tool="brush" aria-label="Brush" aria-pressed="true">
+      <button class="tool-btn active" data-tool="brush" aria-label="Brush" aria-pressed="true" title="Brush">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="18" r="4"/><rect x="10" y="4" width="4" height="12" rx="2"/></svg>
       </button>
-      <button class="tool-btn" data-tool="eraser" aria-label="Eraser" aria-pressed="false">
+      <button class="tool-btn" data-tool="eraser" aria-label="Eraser" aria-pressed="false" title="Eraser">
         <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><line x1="4" y1="14" x2="20" y2="14" stroke-width="1.5"/></svg>
       </button>
-      <button class="tool-btn" data-tool="fill" aria-label="Fill bucket" aria-pressed="false">
+      <button class="tool-btn" data-tool="fill" aria-label="Fill bucket" aria-pressed="false" title="Fill">
         <svg viewBox="0 0 24 24"><path d="M6 20l6-16 6 16z"/><rect x="4" y="18" width="16" height="3" rx="1"/></svg>
       </button>
-      <button class="tool-btn" data-action="undo" aria-label="Undo">
+      <button class="tool-btn" data-action="undo" aria-label="Undo" title="Undo">
         <svg viewBox="0 0 24 24"><path d="M7 10l-5 5 5 5" fill="none" stroke-width="2.5"/><path d="M2 15h14a5 5 0 000-10h-3" fill="none" stroke-width="2.5"/></svg>
       </button>
-      <button class="tool-btn" data-action="clear" aria-label="Clear canvas">
+      <button class="tool-btn" data-action="clear" aria-label="Clear canvas" title="Clear">
         <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20" stroke-width="2.5"/><line x1="20" y1="4" x2="4" y2="20" stroke-width="2.5"/></svg>
       </button>
     </div>
@@ -51,16 +51,16 @@
     </div>
 
     <div class="tool-group sizes" aria-label="Brush size">
-      <button class="size-btn" data-size="4" aria-label="Small brush" aria-selected="false"><span class="size-dot size-s"></span></button>
-      <button class="size-btn active" data-size="12" aria-label="Medium brush" aria-selected="true"><span class="size-dot size-m"></span></button>
-      <button class="size-btn" data-size="28" aria-label="Large brush" aria-selected="false"><span class="size-dot size-l"></span></button>
+      <button class="size-btn" data-size="4" aria-label="Small brush" aria-selected="false" title="Small"><span class="size-dot size-s"></span></button>
+      <button class="size-btn active" data-size="12" aria-label="Medium brush" aria-selected="true" title="Medium"><span class="size-dot size-m"></span></button>
+      <button class="size-btn" data-size="28" aria-label="Large brush" aria-selected="false" title="Large"><span class="size-dot size-l"></span></button>
     </div>
 
     <div class="tool-group shapes" aria-label="Brush shape">
-      <button class="shape-btn active" data-shape="round" aria-label="Round brush" aria-selected="true">&#9679;</button>
-      <button class="shape-btn" data-shape="star" aria-label="Star brush" aria-selected="false">&#9733;</button>
-      <button class="shape-btn" data-shape="heart" aria-label="Heart brush" aria-selected="false">&#9829;</button>
-      <button class="shape-btn" data-shape="flower" aria-label="Flower brush" aria-selected="false">&#10047;</button>
+      <button class="shape-btn active" data-shape="round" aria-label="Round brush" aria-selected="true" title="Round">&#9679;</button>
+      <button class="shape-btn" data-shape="star" aria-label="Star brush" aria-selected="false" title="Star">&#9733;</button>
+      <button class="shape-btn" data-shape="heart" aria-label="Heart brush" aria-selected="false" title="Heart">&#9829;</button>
+      <button class="shape-btn" data-shape="flower" aria-label="Flower brush" aria-selected="false" title="Flower">&#10047;</button>
     </div>
   </nav>
 
